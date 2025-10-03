@@ -1182,7 +1182,7 @@ elif st.session_state.page == "Hypothesis Summary":
                     
                     categorical_cols = df.select_dtypes(include=['object', 'category']).columns
                     if len(categorical_cols) > 0:
-                        most_diverse = categorical_cols[df[categorical_cols].nunique().idxmax()]
+                        most_diverse = df[categorical_cols].nunique().idxmax()
                         st.write(f"- Most diverse categorical column: {most_diverse} ({df[most_diverse].nunique()} unique values)")
                         
                 else:
